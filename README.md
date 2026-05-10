@@ -56,11 +56,3 @@ python src/step2_attack.py
 # Step 3: Apply differential privacy, re-evaluate, plot MSE/SSIM vs epsilon
 python src/step3_defense.py
 ```
-
-## Submission checklist (per the homework spec)
-
-- [ ] Code with comments
-- [ ] Word document report with results from all 3 steps
-- [ ] **Team responsibility table** inside the report
-- [ ] Zip file named `TeamName_HW3.zip`
-- [ ] Upload to Moodle
