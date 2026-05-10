@@ -1,0 +1,28 @@
+name: hw3-deid
+# GPU build for NVIDIA RTX 4060.
+# Strategy: install everything EXCEPT pytorch via conda, then install
+# pytorch via pip from the official PyTorch CUDA 12.1 wheel index.
+# This avoids conda solver issues that can mix CPU/GPU builds and trigger
+# the fbgemm.dll error on Windows.
+#
+# Your driver (CUDA 13.2 in nvidia-smi) is forward compatible -- CUDA 12.1
+# wheels run fine on it.
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy<2              # PyTorch 2.3.1 is built against NumPy 1.x
+  - matplotlib
+  - opencv
+  - scikit-image          # for SSIM, MSE
+  - scikit-learn
+  - pillow
+  - jupyter
+  - tqdm
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.3.1
+      - torchvision==0.18.1
+      - python-docx       # for generating the final report (optional)
