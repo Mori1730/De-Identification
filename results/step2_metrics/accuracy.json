@@ -1,0 +1,10 @@
+{
+  "baseline_random": 2.5,
+  "original": 95.0,
+  "pix_b4": 95.0,
+  "pix_b8": 95.0,
+  "pix_b16": 98.75,
+  "blur_k15": 95.0,
+  "blur_k45": 95.0,
+  "blur_k99": 92.5
+}
